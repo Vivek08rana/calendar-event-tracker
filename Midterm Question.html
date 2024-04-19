@@ -1,0 +1,80 @@
+﻿<!--By: Vivek Rana (218095380)-->
+<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title> Midterm Question </title>
+    <link rel="stylesheet" href="Midterm Question.css">
+    <script type="text/javascript" src="Midterm Question.js">
+    </script>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body onload="setCurrentMonth()" style="background-color: black">
+    <h2 align="center" style="color: white;" id="currentMonth">
+        January 2021
+    </h2>
+    <br />
+
+    <!--Line 1: Setting the background color of the table created and its position on screen-->
+    <!--Line 2: Setting the size of the table itself through spacing (space between the cell and its contents) and padding (space between border of cell and its contents)-->
+    <table bgcolor="black" align="center"
+           cellspacing="45" cellpadding="45">
+        <!--Table Contents-->
+        <!--tr indicates that a row of cells is being created-->
+        <tr id="dayHeader">
+            <th>Sun</th>
+            <th>Mon</th>
+            <th>Tue</th>
+            <th>Wed</th>
+            <th>Thu</th>
+            <th>Fri</th>
+            <th>sat</th>
+        </tr>
+    </table>
+
+    <br>
+
+    <!--Right Button to advance to next week-->
+    <div class="button1" style='float: right;'>
+        <button type="button" id="prevWeek" onclick="changeWeekN()">Next Week</button>
+    </div>
+
+    <!--Middle Button to return any upcoming event if there is one on the day and an alarm offset is in place & other button returns to today -->
+    <div class="button4" style="position: absolute; left: 45%; transform: translateX(-50%)">
+        <button type="button" onclick="today()">Today</button>
+    </div>
+    <div class="button0" style="position: absolute; left: 58%; transform: translateX(-50%)">
+        <button type="button" onclick="updateDateThenCheckEvents()">Upcoming Events</button>
+    </div>
+
+    <!--Left Button to go to previous week-->
+    <div class="button2" style='float: left;'>
+        <button type="button" id="nextWeek" onclick="changeWeekP()">Previous Week</button>
+    </div>
+
+    <br><br>
+
+    <!--From to add event to Calendar-->
+    <form id="eventDetails">
+        <label for="theDate"><b>Enter the Date of the Event (YYYY-MM-DD | HH:MM | AM/PM):</b></label><br>
+        <input type="datetime-local" id="eDate"><br>
+
+        <label for="theDescription"><b>Enter a Description of the Event:</b></label><br>
+        <input type="text" id="eDesc" name="eDesc"><br>
+
+        <label for="theAlertOffset"><b>Enter when you would like to be Alerted about the Event on the day:</b></label><br>
+        <input type="time" id="eAlert" name="eAlert">
+
+        <br><br>
+
+        <div class="button3">
+            <button type="button" id="validateEvt" onclick="validateEvent()">ADD EVENT</button>
+        </div>
+    </form>
+
+    <!--List of Events-->
+    <textarea readonly id="eventNotes" style="resize: none; background-color: black; color: ghostwhite">List of Events: </textarea>
+</body>
+
+</html>

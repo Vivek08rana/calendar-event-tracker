@@ -1,0 +1,32 @@
+﻿body
+{
+}
+
+h2 {
+    border: 1px solid white;
+    background-color: #000000;
+}
+
+dayHeader {
+    color: azure;
+}
+
+table, th, td {
+    border: 1px solid white;
+}
+
+form {
+    display: inline-block;
+}
+
+textarea {
+    margin-left: 20px;
+    border: 1px solid white;
+    width: 600px;
+    height: 150px;
+    font-weight: bold;
+}
+
+label {
+    color: white;
+}
